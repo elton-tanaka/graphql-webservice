@@ -4,7 +4,7 @@ type Student {
     course: String!
     semester: Int!
     ra: Int!
-    cpf: Int!
+    cpf: Float!
     city: String!
 }
 
@@ -15,5 +15,7 @@ type Query {
 }
 
 type Mutation {
-    createStudent(name: String!, course: String!, semester: Int!, ra: Int!, cpf: Int!, city: String!): Student
+    createStudent(name: String!, course: String!, semester: Int!, ra: Int!, cpf: Float!, city: String!): Student
+    deleteStudentById(id: ID!): Student
+    editStudentById(id: ID!, name: String, course: String, semester: Int, ra: Int, cpf: Float, city: String): Student
 }
